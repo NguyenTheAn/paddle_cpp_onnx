@@ -1,0 +1,34 @@
+# params for text detector
+det_mode_path: "/home/ligirk/workspace/upwork/22/ocr_deploy_rayserve/onnx_models/det.onnx"
+#divisible by 32
+det_imgsz: 512
+# tensorrt or cuda or cpu
+det_excution_provider: "cpu"
+det_device_id: 0
+# DB parmas
+det_db_thresh: 0.3
+det_db_box_thresh: 0.6
+det_db_unclip_ratio: 1.5
+use_dilation: false
+
+det_max_input_batch: 3
+
+# Rec params
+rec_model_path: "/home/ligirk/workspace/upwork/22/ocr_deploy_rayserve/onnx_models/rec.onnx"
+rec_character_dict_path: "/home/ligirk/workspace/upwork/22/ocr_deploy_rayserve/onnx_models/en_dict.txt"
+rec_excution_provider: "cpu"
+rec_device_id: 0
+rec_imgsz: "480"
+# rec_imgsz: "320,480,640,720,900"
+rec_batch_size: 2
+rec_use_space_char: true
+
+use_angle_cls: true
+cls_model_path: "/home/ligirk/workspace/upwork/22/ocr_deploy_rayserve/onnx_models/model_cls.onnx"
+cls_imgsz: "192"
+cls_batch_size: 2
+cls_thresh: 0.9
+cls_excution_provider: "cpu"
+cls_device_id: 0
+
+drop_score: 0.1
